@@ -1,0 +1,13 @@
+
+<div class="container d-flex p-2">
+<% @cocktails.each do |cocktail| %>
+  <div class="card-trip">
+    <img class="small-image" src=<%= cocktail.url %> />
+    <div class="card-trip-infos">
+      <div>
+      <h2> <%= link_to cocktail.name, cocktail_path(cocktail)%> </h2>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

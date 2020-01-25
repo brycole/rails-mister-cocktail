@@ -1,0 +1,7 @@
+
+<%= simple_form_for [@cocktail] do |f| %>
+  <%= f.input :name, label: "Name of Cocktail" %>
+  <%= f.input :url, label: "Url of Cocktail" %>
+  <%= f.submit "Add a new cocktail", class: "btn btn-primary" %>
+  <%= link_to "Return to Cocktail list", cocktails_path, class:"btn btn-danger" %>
+<% end %>
