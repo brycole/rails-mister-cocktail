@@ -2,13 +2,12 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 200px;
   margin: 5px;
-  height: 225px;
 }
 
 .card-trip > img {
   width: 100%;
+  height: 75%;
   object-fit: cover;
 }
 
