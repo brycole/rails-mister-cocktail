@@ -2,8 +2,8 @@
 <div class="container d-flex p-0 m-0">
   <div class="card-trip big ml-0">
     <!-- <img class="big-image" src=<%= @cocktail.url %> /> -->
-    <% if cocktail.photo.attached? %>
-      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if @cocktail.photo.attached? %>
+      <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400 %>
     <% end %>
     <div class="card-trip-infos">
       <div>
