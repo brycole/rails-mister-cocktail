@@ -1,12 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <%= link_to cocktails_path, class: "navbar-brand" do %>
+    <%= image_tag "https://media.istockphoto.com/vectors/whiskey-glass-with-ice-cubes-illustration-vector-id940932982?k=6&m=940932982&s=612x612&w=0&h=bI4g_3trtocN7kL5luriyT0SKsO6PL9DGkxewqZy_Eg=" %>
     <% end %>
 
   <div class="" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Cocktails", cocktails_path, class: "btn btn-warning" %>
         <%= link_to "New Cocktail", new_cocktail_path, class: "btn btn-primary" %>
       </li>
     </ul>
