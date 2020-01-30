@@ -10,7 +10,13 @@
         <h2><%= @cocktail.name %></h2>
 
         <% @doses.each do |dose| %>
-          <p><%= dose.description %> <%= dose.ingredient.name %></p>
+          <div class="doses d-flex">
+            <p class="pr-1"><%= dose.description %> <%= dose.ingredient.name %></p>
+            <p><%= link_to cocktail_dose_path(cocktail_id: @cocktail, id: dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+            </p>
+          </div>
         <% end %>
         <%= link_to "Add new ingredients", new_cocktail_dose_path(cocktail_id: @cocktail), class: "btn btn-primary mt-2"  %>
         <%= link_to "Edit", edit_cocktail_path(cocktail_id: @cocktail), class: "btn btn-warning mt-2" %>

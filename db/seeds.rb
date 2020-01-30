@@ -1,9 +1,14 @@
 
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
-Ingredient.create(name: "gin")
-Ingredient.create(name: "tonic")
+require 'open-uri'
+require 'json'
 
-Cocktail.create(name: "gin and tonic")
+url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+drink_ingredients = JSON.parse(open(url).read)
+puts 'Destroying ingredients...'
+Ingredient.destroy_all
+puts 'Seeding ingredients...'
+drink_ingredients['drinks'].each do |i|
+  Ingredient.create(name: i['strIngredient1'])
+end
+puts 'Finished seeding ingredients!'

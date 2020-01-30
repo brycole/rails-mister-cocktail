@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+
+en:
+  helpers:
+    submit:
+      create: "Add a new cocktail"
+      update: "Update cocktail"

@@ -1,4 +1,6 @@
 class DosesController < ApplicationController
+  before_action :find_cocktails, only: %i[new]
+
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
@@ -12,6 +14,19 @@ class DosesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @dose = Dose.find(params[:id])
+    @dose.destroy
+    redirect_to cocktail_path(@cocktail)
+  end
+
+  private
+
+  def find_cocktails
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 
   def dose_params
